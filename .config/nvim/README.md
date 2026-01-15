@@ -1,18 +1,12 @@
-# nvim-Config
+# Neovim Configuration
 
-PLUGINS
+## PLUGINS  
+### Colorscheme: Kanagawa & Catppuccin <br>
+### Navigation: <br>
+- Neotree <br> 
+- Telescope <br>
+- Treesitter <br>
 
-Visual: 
--Catpuccin
--Lualine
+## Lsp <br>
+### I don't really use LSPs lately, might use them again in the future
 
-Files:
--Neotree
--Telescope
--Treesitter
-
-Lsp: 
--Trouble
--Telescope-ui
-
-No additional LSP, too bloated
