@@ -7,6 +7,7 @@
 - Telescope <br>
 - Treesitter <br>
 
-## Lsp <br>
-### I don't really use LSPs lately, might use them again in the future
+## Lsp: Mason <br>
+- Php: Intelephense <br>
+- HTML: SuperHtml <br>
 
