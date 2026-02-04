@@ -15,7 +15,7 @@ return {
       ensure_installed = languages,
       highlight = {enable = true},
       indent = {
-        enabl = true,
+        enable = true,
       },
     })
   end

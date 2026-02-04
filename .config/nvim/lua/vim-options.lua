@@ -15,6 +15,8 @@ vim.keymap.set('n', 'def', vim.lsp.buf.definition, {})
 vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
 vim.keymap.set('n', "<leader>ow", '<cmd>lua vim.ui.open(vim.fn.expand("%"))<CR>', { desc = "Open HTML in browser" })
 vim.keymap.set('n', "<leader>td", ":Todo<CR>", {silent = true})
+vim.keymap.set('n', "<leader>cs", ":Telescope colorscheme<CR>")
+
 --Barbar
 local barbar_state = true
 vim.keymap.set('n', '<leader>tb', function()
