@@ -1,7 +1,7 @@
 # Neovim Configuration
 
 ## PLUGINS  
-### Colorscheme: Kanagawa & Catppuccin <br>
+### Colorscheme: Kanagawa & TokyoNight <br>
 ### Navigation: <br>
 - Neotree <br> 
 - Telescope <br>
@@ -11,3 +11,6 @@
 - Php: Intelephense <br>
 - HTML: SuperHtml <br>
 
+### Additional Features: <br>
+- Todo list (yt tutorial) <br>
+- Colorscheme toggle based on time <br>

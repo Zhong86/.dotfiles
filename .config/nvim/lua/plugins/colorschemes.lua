@@ -5,7 +5,7 @@ function changeColor()
   if nowMin < sixPm then
     vim.cmd.colorscheme "kanagawa"
   else
-    vim.cmd.colorscheme "tokyonight-night"
+    vim.cmd.colorscheme "tokyonight-moon"
   end
 end
 
@@ -34,7 +34,7 @@ return {
     priority = 1000,
     config = function()
       require("tokyonight").setup({
-        style = "storm"
+        style = "moon"
       })
     end
   }
