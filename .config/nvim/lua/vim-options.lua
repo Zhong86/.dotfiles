@@ -9,13 +9,12 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set ignorecase")
 
 --KEYBINDS
-vim.keymap.set('n', '<leader>p', ':!php -l %<CR>', {noremap=true, silent=true})
-vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-vim.keymap.set('n', 'def', vim.lsp.buf.definition, {})
-vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
-vim.keymap.set('n', "<leader>ow", '<cmd>lua vim.ui.open(vim.fn.expand("%"))<CR>', { desc = "Open HTML in browser" })
-vim.keymap.set('n', "<leader>td", ":Todo<CR>", {silent = true})
-vim.keymap.set('n', "<leader>cs", ":Telescope colorscheme<CR>")
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'LSP Info'})
+vim.keymap.set('n', 'def', vim.lsp.buf.definition, { desc = "" })
+vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, { desc = "Code Actions"})
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show full diagnostic" })
+vim.keymap.set('n', "<leader>td", ":Todo<CR>", {silent = true, desc="Todo List"})
+vim.keymap.set('n', "<leader>cs", ":Telescope colorscheme<CR>", {desc="Change colorscheme"})
 
 --Barbar
 local barbar_state = true

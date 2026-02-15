@@ -37,7 +37,7 @@ vim.diagnostic.config({
     source = "always",
     header = "",
     prefix = "",
-  },
+  }
 })
 
 -- Enable cursorline and highlight only the line number
