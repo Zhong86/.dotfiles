@@ -39,6 +39,7 @@ local config = {
         favoriteStaticMembers = {
           "org.junit.Assert.*",
           "org.mockito.Mockito.*",
+          "org.springframework.boot.SpringApplication.run",
         },
         filteredTypes = {
           "com.sun.*", "io.micrometer.shaded.*",
