@@ -18,11 +18,13 @@ vim.opt.rtp:prepend(lazypath)
 require("vim-options")
 require("lazy").setup("plugins")
 
---TODO CUSTOM PLUGIN
+--TODO CUSTOM PLUGINS
 local todoFloat = require("todoFloat")
 todoFloat.setup({
   targetFile = "~/Documents/linuxPrj"
 })
+
+require("Functions.javaFile")
 
 vim.diagnostic.config({
   virtual_text = true, -- Show errors as inline text
