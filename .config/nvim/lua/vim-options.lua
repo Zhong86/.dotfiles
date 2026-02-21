@@ -24,6 +24,14 @@ vim.keymap.set("n", "<leader>nj", function()
     end
   end)
 end, { desc = "New Java file" })
+--Springboot Java file
+vim.keymap.set("n", "<leader>ns", function()
+  vim.ui.input({ prompt = "Class name: " }, function(name)
+    if name then
+      vim.cmd("Springboot " .. name)
+    end
+  end)
+end, { desc = "New Java file for Springboot" })
 
 --Barbar
 local barbar_state = true
