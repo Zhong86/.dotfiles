@@ -14,7 +14,7 @@ return {
         },
         lualine_x = {},
         lualine_y = {'filetype' },
-        lualine_z = {'hostname'}
+        lualine_z = {'location'}
       }, 
       inactive_sections = {
         lualine_c = { {'filename', path = 1 } }
