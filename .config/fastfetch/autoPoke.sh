@@ -1,6 +1,6 @@
 #!/bin/bash
 
-text="/home/Zhong/.config/fastfetch/list.txt"
+text="/home/zh0ng/.config/fastfetch/list.txt"
 readarray -t list < <(awk -F',' '{ for(i=1; i<NF; i++) print $i }' $text)
 
 arrLen=${#list[@]}
@@ -26,15 +26,15 @@ fi
 
 if [[ $shiny -eq 1 ]]; then
   if [[ -n $form ]]; then
-    pokemon-colorscripts -s -n $name -f $form --no-title > /home/Zhong/.config/fastfetch/logo.txt
+    pokemon-colorscripts -s -n $name -f $form --no-title > /home/zh0ng/.config/fastfetch/logo.txt
   else
-    pokemon-colorscripts -s -n $name --no-title > /home/Zhong/.config/fastfetch/logo.txt
+    pokemon-colorscripts -s -n $name --no-title > /home/zh0ng/.config/fastfetch/logo.txt
   fi
 else
   if [[ -n $form ]]; then
-    pokemon-colorscripts -n $name -f $form --no-title > /home/Zhong/.config/fastfetch/logo.txt
+    pokemon-colorscripts -n $name -f $form --no-title > /home/zh0ng/.config/fastfetch/logo.txt
   else
-    pokemon-colorscripts -n $name --no-title > /home/Zhong/.config/fastfetch/logo.txt
+    pokemon-colorscripts -n $name --no-title > /home/zh0ng/.config/fastfetch/logo.txt
   fi
 fi
 
