@@ -5,28 +5,26 @@ return {
       require('mason').setup()
     end
   }, 
-  {
-    'williamboman/mason-lspconfig.nvim',
-    dependencies = { 'williamboman/mason.nvim' },
-    config = function()
-      require('mason-lspconfig').setup({
-        ensure_installed = { 'intelephense', 'jdtls'}, 
-        automatic_enable = true
-      })
-    end
-  },
+  -- {
+  --   'williamboman/mason-lspconfig.nvim',
+  --   dependencies = { 'williamboman/mason.nvim' },
+  --   config = function()
+  --     require('mason-lspconfig').setup()  -- REQUIRED!
+  --   end
+  -- },
   {
     'neovim/nvim-lspconfig',
+    version = "0.1.*",
     dependencies = { 'williamboman/mason-lspconfig.nvim' },
     config = function()
-      vim.lsp.config('lua_ls', {})
-      vim.lsp.config('intelephense', {})
-      vim.lsp.config('jdtls', {})
+      local lspconfig = require('lspconfig')
+      lspconfig.intelephense.setup {}
+      lspconfig.jdtls.setup {}  -- Optional, nvim-jdtls overrides this
     end
-  }, 
-  -- JAVA
+  },
+  -- JAVA (keep as-is, perfect)
   {
     "mfussenegger/nvim-jdtls",
-    ft = "java", -- only loads for .java files = saves RAM
+    ft = "java",
   }
 }
