@@ -16,15 +16,6 @@ vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show full 
 vim.keymap.set('n', "<leader>td", ":Todo<CR>", {silent = true, desc="Todo List"})
 vim.keymap.set('n', "<leader>cs", ":Telescope colorscheme<CR>", {desc="Change colorscheme"})
 
---New Java file
-vim.keymap.set("n", "<leader>nj", function()
-  vim.ui.input({ prompt = "Class name: " }, function(name)
-    if name then
-      vim.cmd("Java " .. name)
-    end
-  end)
-end, { desc = "New Java file" })
-
 --Barbar
 local barbar_state = true
 vim.keymap.set('n', '<leader>tb', function()
@@ -39,4 +30,20 @@ end, { desc = 'Toggle barbar' })
 vim.keymap.set('n', '<A-,>', '<Cmd>BufferPrevious<CR>')
 vim.keymap.set('n', '<A-.>', '<Cmd>BufferNext<CR>')
 vim.keymap.set('n', '<A-c>', '<Cmd>BufferClose<CR>')
+
+--New Java file
+vim.keymap.set("n", "<leader>nj", function()
+  vim.ui.input({ prompt = "Class name: " }, function(name)
+    if name then
+      vim.cmd("Java " .. name)
+    end
+  end)
+end, { desc = "New Java file" })
+
+--Blade file detection
+vim.filetype.add({
+  pattern = {
+    [".*%.blade%.php"] = "blade",
+  },
+})
 

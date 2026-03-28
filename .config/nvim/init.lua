@@ -16,12 +16,16 @@ vim.opt.rtp:prepend(lazypath)
 
 --PLUGINS
 require("vim-options")
-require("lazy").setup("plugins")
+require("lazy").setup({
+  { import = "plugins.languages" },
+  { import = "plugins.gui" }, 
+  { import = "plugins.code" }
+})
 
 --TODO CUSTOM PLUGINS
 local todoFloat = require("todoFloat")
 todoFloat.setup({
-  targetFile = "~/Documents/linuxPrj"
+  targetFile = "~/Documents/todo.md"
 })
 
 require("Functions.javaFile")
