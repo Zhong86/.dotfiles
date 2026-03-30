@@ -19,7 +19,8 @@ return {
       require("luasnip.loaders.from_vscode").lazy_load()
       cmp.setup({
         snippet = {
-          expand = function()
+          expand = function(args)
+            require('luasnip').lsp_expand(args.body)
             --vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
           end,
         },

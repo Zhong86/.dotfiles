@@ -53,7 +53,7 @@ return {
               "sodium", "SPL", "sqlite3", "standard", "superglobals",
               "tokenizer", "xml", "xmlreader", "xmlwriter", "xsl",
               "zip", "zlib",
-              "wordpress",    -- keep if needed
+              "laravel",    -- keep if needed
             },
             diagnostics = {
               enable = true,
@@ -84,7 +84,10 @@ return {
         init_options = {
           ["language_server_phpstan.enabled"] = false,
           ["language_server_psalm.enabled"] = false,
-          ["language_server_completion.enabled"] = false, -- let intelephense handle completions
+          ["language_server_completion.enabled"] = false, 
+          ["language_server_hover.enabled"] = false,
+          ["language_server_diagnostics.enabled"] = false,
+          ["language_server_worse_reflection_diagnostics.enabled"] = false,
         }
       })
 
