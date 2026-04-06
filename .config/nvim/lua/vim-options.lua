@@ -8,6 +8,12 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set ignorecase")
 
+--YANK
+vim.keymap.set('n', 'p', '"0p', { noremap = true })
+vim.keymap.set('n', 'P', '"0P', { noremap = true })
+vim.keymap.set('x', 'p', '"0p', { noremap = true })
+vim.keymap.set('x', 'P', '"0P', { noremap = true })
+
 --KEYBINDS
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'LSP Info'})
 vim.keymap.set('n', 'def', vim.lsp.buf.definition, { desc = "" })
