@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir="/home/Zhong/Wallpaper"
+dir="/home/zh0ng/Wallpaper"
 
 if [ -n "$1" ]; then
   if [ ! -d "$dir/$1" ]; then
@@ -18,7 +18,6 @@ plasma-apply-wallpaperimage "$wallpaper" > /dev/null 2>&1
 name=$(echo $wallpaper | awk -F'/' '{print $NF}')
 echo "Changing wallpaper to $name"
 
-#kde-material-you-colors  &
 pid=$!
 sleep 3
 kill $pid
