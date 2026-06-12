@@ -1,3 +1,5 @@
+#Autostart ssh-agent
+eval "$(ssh-agent -s)" > /dev/null 2>&1
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -49,19 +51,17 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 #aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias cmatrix='cmatrix -ab -C red'
-alias fastfetch="/home/Zhong/.config/fastfetch/autoPoke.sh; fastfetch"
+alias fastfetch="/home/zh0ng/.config/fastfetch/autoPoke.sh; fastfetch"
 alias nvimo='nvim $(fzf --preview="cat {}")'
 alias fzf='fzf --preview="cat {}"'
 alias du='du -h --max-depth=1 2>/dev/null | sort -h'
 alias clear='clear; fastfetch'
-alias vpn='protonvpn signin billy3rlvin@gmail.com; protonvpn connect'
 #Command Scripts
-commandDir='/home/Zhong/Documents/Commands/'
-alias encrypt="python $commandDir/encryptor.py"
+commandDir='/home/zh0ng/Documents/Commands'
+alias pass="sudo bash $commandDir/encrypt.sh"
 alias db="bash $commandDir/db.sh"
 alias chwall="bash $commandDir/chwall.sh"
-alias dcUpdate="bash $commandDir/discord_update.sh"
+alias dc="bash $commandDir/dcUpdate.sh"
 
 #shell integration
 eval "$(fzf --zsh)"
@@ -71,7 +71,7 @@ bindkey '\t' autosuggest-accept
 bindkey '^[[Z' fzf-completion
 
 #ENV
-set -a
-[ -f ~/.env ] && source ~/.env
-set +a
+export PATH="$PATH:/sbin:/usr/sbin"
 
+
+export PATH="$HOME/.npm-global/bin:$PATH"

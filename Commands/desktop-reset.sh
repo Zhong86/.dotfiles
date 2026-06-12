@@ -67,7 +67,7 @@ SAFE[$USER_SYSTEMD_PID]=1
 # ─────────────────────────────────────────────────────────────────────────────
 is_kde_core() {
     case "$1" in
-        konsole|yakuake|xterm|alacritty|kitty|wezterm|foot|gnome-terminal*|\
+        yakuake|xterm|alacritty|kitty|wezterm|foot|gnome-terminal*|\
         plasmashell|kwin_x11|kwin_wayland|kwin_wayland_wrapper|kwin_wayland_wr|\
         ksmserver|kded5|kded6|kdeinit5|kdeinit6|\
         kglobalaccel5|kglobalaccel6|kwalletd5|kwalletd6|\

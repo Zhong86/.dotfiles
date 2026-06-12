@@ -27,11 +27,19 @@
     "break",
     {
       "type": "os",
-      "key": " "
+      "key": " "
     },
     {
       "type": "kernel",
-      "key": " "
+      "key": " "
+    },
+    {
+      "type": "de", 
+      "key": " "
+    },
+    {
+      "type": "wm",
+      "key": " "
     },
     {
       "type": "packages",
@@ -41,10 +49,6 @@
     {
       "type": "shell",
       "key": " "
-    },
-    {
-      "type": "wm",
-      "key": " "
     },
     {
       "type": "terminal",
@@ -62,7 +66,6 @@
       "type": "bluetooth",
       "key": "󰂯 "
     },
-
     {
       "type": "media",
       "key": "󰝚 "

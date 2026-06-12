@@ -69,10 +69,12 @@ decrypt_entry() {
 
   count=$(jq '.passwords | length' "$passpath" 2>/dev/null || echo 0)
   [ "$count" -eq 0 ] && { whiptail --msgbox "No passwords stored yet." 8 40; return 1; }
+  
+  local visible=$(( count < 15 ? count : 15 ))
 
   local args=()
   args+=("--title" "Password Manager ($count total)")
-  args+=("--menu" "Choose an entry:" 25 70 $((count + 1)))
+  args+=("--menu" "Choose an entry:" $(( visible + 8 )) 70 "$visible")
 
   for i in $(seq 1 $count); do
     name=$(jq -r ".passwords[$((i-1))].name // \"Entry $i\"" "$passpath")
@@ -121,9 +123,11 @@ remove() {
   count=$(jq '.passwords | length' "$passpath" 2>/dev/null || echo 0)
   [ "$count" -eq 0 ] && { whiptail --msgbox "No passwords stored yet." 8 40; return 1; }
 
-  args=()
+  local visible=$(( count < 15 ? count : 15 ))
+
+  local args=()
   args+=("--title" "Remove Entry")
-  args+=("--menu" "Choose entry to remove:" 25 70 $((count + 1)))
+  args+=("--menu" "Choose entry to remove:" $(( visible + 8 )) 70 "$visible")
 
   for i in $(seq 1 $count); do
     name=$(jq -r ".passwords[$((i-1))].name // \"Entry $i\"" "$passpath")
