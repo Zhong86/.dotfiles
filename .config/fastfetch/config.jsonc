@@ -67,12 +67,17 @@
       "key": "󰂯 "
     },
     {
-      "type": "media",
+      "type": "wallpaper",
+      "key": "󰸉 "
+    },
+    {
+      "type": "music",
       "key": "󰝚 "
     },
     {
-      "type": "wallpaper",
-      "key": "󰸉 "
+      "type": "command",
+      "key": "󰝚 ",
+      "text": "ncmpcpp --current-song '{%a - %t}'"
     },
     "break",
     "break"
