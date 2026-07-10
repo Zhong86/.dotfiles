@@ -9,7 +9,6 @@ return {
       vim.keymap.set('n', '<leader>g', builtin.live_grep, {})
       vim.keymap.set('n', "<leader>b", builtin.buffers, {})
       vim.keymap.set('n', "<leader>v", builtin.lsp_document_symbols, {})
-      vim.keymap.set('n', "<leader>m", builtin.marks, {})
       vim.keymap.set('n', "<C-w><C-r>", builtin.colorscheme, {})
     end
 

@@ -4,6 +4,7 @@ local jdtls = require("jdtls")
 local mason_path = vim.fn.stdpath("data") .. "/mason"
 local jdtls_path = mason_path .. "/packages/jdtls"
 local launcher_jar = vim.fn.glob(jdtls_path .. "/plugins/org.eclipse.equinox.launcher_*.jar")
+local lombok_path = "/home/zh0ng/.local/share/nvim/mason/packages/jdtls/lombok.jar"
 
 -- OS-specific config dir
 local os_config = "linux"
@@ -20,6 +21,7 @@ local config = {
     "-Dlog.level=ALL",
     "-Xms128m",          -- starting heap: 128 MB
     "-Xmx400m",          -- MAX heap: 400 MB  ← tweak this
+    "-javaagent:" .. lombok_path,
     "--add-modules=ALL-SYSTEM",
     "--add-opens", "java.base/java.util=ALL-UNNAMED",
     "--add-opens", "java.base/java.lang=ALL-UNNAMED",

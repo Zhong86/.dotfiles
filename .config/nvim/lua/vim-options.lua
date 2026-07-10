@@ -21,6 +21,12 @@ vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, { desc = "Code
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show full diagnostic" })
 vim.keymap.set('n', "<leader>td", ":Todo<CR>", {silent = true, desc="Todo List"})
 vim.keymap.set('n', "<leader>cs", ":Telescope colorscheme<CR>", {desc="Change colorscheme"})
+vim.keymap.set("n", "<leader>ss", "<cmd>AutoSession save<cr>")
+vim.keymap.set("n", "<leader>sr", "<cmd>AutoSession restore<cr>")
+vim.keymap.set("n", "<leader>sf", "<cmd>Telescope session-lens search_session<cr>")
+
+-- markdown
+vim.keymap.set("n", "<leader>mp", "<cmd>Glow<cr>", { desc = "Markdown Preview" })
 
 --Barbar
 local barbar_state = true
