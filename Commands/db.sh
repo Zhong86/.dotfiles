@@ -1,19 +1,29 @@
 #!/bin/bash
 
-if [[ -z "$1" || $1 == 'start' ]]; then
-  echo "Starting servers: MariaDB, PostgreSQL"
-  sudo systemctl start mariadb
-  sudo systemctl start postgresql
-elif [[ $1 == 'stop' ]]; then
-  echo "Stopping servers: MariaDB, PostgreSQL"
-  sudo systemctl stop mariadb
-  sudo systemctl stop postgresql
-elif [[ $1 == '--maria' ]]; then
-  echo "Starting server: MariaDB"
-  sudo systemctl start mariadb
-elif [[ $1 == '--pg' ]]; then
-  echo "Starting server: PostgreSQL"
-  sudo systemctl start postgresql
+declare -A SERVICES=(
+  [--maria]="MariaDB:mariadb"
+  [--pg]="PostgreSQL:postgresql"
+  [--rd]="Redis:redis-server"
+  [--ollama]="Ollama:ollama"
+)
+
+do_action() {
+  local action=$1 key=$2
+  local name="${SERVICES[$key]%%:*}"
+  local unit="${SERVICES[$key]##*:}"
+  echo "${action^}ing server: $name"
+  sudo systemctl "$action" "$unit"
+}
+
+arg="${1:-start}"
+
+if [[ "$arg" == "start" || "$arg" == "stop" ]]; then
+  echo "${arg^}ing servers: ${SERVICES[*]%%:*}"
+  for key in "${!SERVICES[@]}"; do
+    do_action "$arg" "$key"
+  done
+elif [[ -n "${SERVICES[$arg]+set}" ]]; then
+  do_action start "$arg"
 else
-  echo "Available params: start, stop, --maria, --pg"
+  echo "Available params: start, stop, ${!SERVICES[*]}"
 fi
